@@ -22,9 +22,9 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                 <ul class="dropdown-menu dropdown-menu-right menuList"
                                     aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#">پروفایل من</a></li>
                                     <li><a class="dropdown-item" style="cursor: pointer;"
-                                            (click)="onLogout()">Logout</a></li>
+                                            (click)="onLogout()">خروج</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -61,14 +61,14 @@
         <div class="col-md-8 col-xl-6 chat">
             <div class="card">
                 <div class="card-header msg_head ">
-                    <div class="d-flex bd-highlight">
+                    <div class="d-flex bd-highlight" dir="rtl">
                         <div class="img_cont">
                             <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg"
                                 class="rounded-circle user_img">
                             <span class="online_icon"></span>
                         </div>
-                        <div class="user_info">
-                            <span>Chat with {{chatUser?.firstName}} {{chatUser?.lastName}}</span>
+                        <div class="user_info" style="margin-right: 1%;">
+                            <span>چت با {{chatUser?.firstName}} {{chatUser?.lastName}} </span>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                     aria-haspopup="true" aria-expanded="false"></i>
                                 <ul class="dropdown-menu userList" attr.aria-valuenow="{{m.id}}">
                                     <li><a class="dropdown-item mouseCursor"
-                                            (click)="deleteMessage(m,'DeleteForMe',false)">Remove Only For Me</a></li>
+                                            (click)="deleteMessage(m,'DeleteForMe',false)">حذف برای من</a></li>
                                 </ul>
                             </section>
                             <div class="d-flex justify-content-start mb-4"
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="msg_cotainer">
                                     {{m.content}}
-                                    <span class="msg_time">8:40 AM, Today</span>
+                                    <span class="msg_time">8:40 AM, امروز</span>
                                 </div>
                             </div>
                         </div>
@@ -103,9 +103,9 @@
                                     aria-expanded="false"></i>
                                 <ul class="dropdown-menu userList" attr.aria-valuenow="{{m.id}}">
                                     <li><a class="dropdown-item mouseCursor"
-                                            (click)="deleteMessage(m,'DeleteForMe',true)">Remove Only For Me</a></li>
+                                            (click)="deleteMessage(m,'DeleteForMe',true)">حذف برای من</a></li>
                                     <li><a class="dropdown-item mouseCursor"
-                                            (click)="deleteMessage(m,'DeleteForEveryone',true)">Remove For Everyone</a>
+                                            (click)="deleteMessage(m,'DeleteForEveryone',true)">حذف برای همه</a>
                                     </li>
                                 </ul>
                             </section>
@@ -113,7 +113,7 @@
                             <div class="d-flex justify-content-end mb-4" *ngIf="m.type==='sent' && !m.isSenderDeleted">
                                 <div class="msg_cotainer_send">
                                     {{m.content}}
-                                    <span class="msg_time_send">8:55 AM, Today</span>
+                                    <span class="msg_time_send">8:55 AM, امروز</span>
                                 </div>
                                 <div class="img_cont_msg">
                                     <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg"
